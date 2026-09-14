@@ -38,8 +38,7 @@ use magnetar_runtime::affinity::ProviderHealth;
 use magnetar_runtime::provider::{Provider, ProviderError, ProviderMetadata, ProviderRegistry};
 
 use crate::ze_sys::{
-    ZE_INIT_FLAG_VPU_ONLY, ZE_LOADER_LIBRARY_CANDIDATES, ZE_RESULT_SUCCESS, ZeDriverGetFn,
-    ZeInitFn,
+    ZE_INIT_FLAG_VPU_ONLY, ZE_LOADER_LIBRARY_CANDIDATES, ZE_RESULT_SUCCESS, ZeDriverGetFn, ZeInitFn,
 };
 
 const NPU_PROVIDER_NAME: &str = "npu";
