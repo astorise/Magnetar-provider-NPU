@@ -23,4 +23,4 @@ magnetar-runtime = { path = "../../magnetar-runtime" }
 # Level Zero is the real, vendor-neutral low-level API Intel's NPU (branded
 # "VPU" inside the API itself: `ZE_INIT_FLAG_VPU_ONLY`) is accessed
 # through -- not a proprietary or guessed interface.
-libloading = "0.8"
+libloading = "0.9"
