@@ -87,7 +87,7 @@ impl NpuProvider {
     fn discover_driver_count() -> Option<u32> {
         let library = ZE_LOADER_LIBRARY_CANDIDATES
             .iter()
-            .find_map(|name| unsafe { libloading::Library::new(name).ok() })?;
+            .find_map(|name| unsafe { libloading::Library::new(*name).ok() })?;
 
         // SAFETY: `zeInit`/`zeDriverGet` are real, stable, publicly
         // documented Level Zero API entry points (`ze_sys.rs`, transcribed
