@@ -52,7 +52,7 @@ truth.
 
 1. Extend `src/ze_sys.rs` with the real per-driver device enumeration API
    (`zeDeviceGet`) and per-device properties (`zeDeviceGetProperties`),
-   building real `magnetar_runtime::device::DeviceDescriptor` values from
+   building real `magnetar_core::device::DeviceDescriptor` values from
    them, mirroring `providers/cuda`'s own `device.rs`.
 2. Implement Level Zero's real module/kernel compilation and execution API
    (`zeModuleCreate`, `zeKernelCreate`, `zeCommandListAppendLaunchKernel`)
@@ -78,6 +78,10 @@ never the reverse -- `magnetar-runtime` has zero compile-time dependency
 on this crate (the same externalization invariant every Provider/Component/
 Format module in this workspace observes). It is pinned into the main
 Magnetar repository as a git submodule at `providers/npu`.
+
+This crate depends on `magnetar-provider-api` (the Provider contract) and
+`magnetar-core`, not on `magnetar-runtime`: Runtime changes above those layers
+no longer reach its lockfile.
 
 ## Continuous integration
 

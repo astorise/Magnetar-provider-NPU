@@ -34,8 +34,10 @@
 //! expected outcome, the same posture `providers/rocm`'s `RocmProvider`
 //! established first for HIP.
 
-use magnetar_runtime::affinity::ProviderHealth;
-use magnetar_runtime::provider::{Provider, ProviderError, ProviderMetadata, ProviderRegistry};
+use magnetar_core::provider_status::ProviderHealth;
+use magnetar_provider_api::provider_api::{
+    Provider, ProviderError, ProviderMetadata, ProviderRegistry,
+};
 
 use crate::ze_sys::{
     ZE_INIT_FLAG_VPU_ONLY, ZE_LOADER_LIBRARY_CANDIDATES, ZE_RESULT_SUCCESS, ZeDriverGetFn, ZeInitFn,
